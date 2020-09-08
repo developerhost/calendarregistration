@@ -1,0 +1,26 @@
+function createEvents() {
+  var calendar = CalendarApp.getDefaultCalendar();
+  // var calendar = CalendarApp.getCalendarById("kanon_hara@nnn.ac.jp"); // IDでカレンダーを指定したい場合
+  var sheet = SpreadsheetApp.getActiveSheet();
+  var values = sheet.getDataRange().getValues();
+ 
+  for(var i = 1; i < values.length; i++){
+    var isRegistered = values[i][0];    
+    if (!isRegistered) {
+
+      var title = values[i][1];
+      var startTime = values[i][2];
+      var endTime = values[i][3];
+      
+      var option = {
+        description: values[i][4],
+        location: values[i][5],
+        guests: values[i][6]
+      }
+      
+      calendar.createEvent(title, startTime, endTime, option);     
+      var registeredCell = sheet.getRange(i + 1, 1);
+      registeredCell.setValue("済");
+    }
+  }
+}
