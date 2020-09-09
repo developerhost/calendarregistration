@@ -2,7 +2,7 @@
 使い方
 ①ツール→スプリクトエディタを選択。
 "②GASコードの3行目
-「// var calendar = CalendarApp.getCalendarById(""wataru_shimono@nnn.ac.jp""); // IDでカレンダーを指定したい場合」
+「// var calendar = CalendarApp.getCalendarById(""dirty@gmail.com""); // IDでカレンダーを指定したい場合」
 赤字部分が自分のN高メールアドレスになってるか確認してください。
 ここを失敗するとカレンダー登録できません。"
 "③メールアドレスを確認後、GASコードを保存して下さい。
